@@ -1,0 +1,30 @@
+<dataConfig>
+    <dataSource type="JdbcDataSource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/halal" user="root" password=""/>
+    <document>
+        <entity name="foodproducts" query="SELECT id, fCode, fName, fManufacture FROM foodproducts">
+            <field column="id" name="id" />
+            <field column="fCode" name="food_code" />
+            <field column="fName" name="food_name" />
+            <field column="fManufacture" name="food_man" />
+            <!--
+            <entity name="certificates" query="SELECT certificates.cCode,certificates.cExpire,certificates.cStatus,certificates.cOrganization FROM certificates INNER JOIN foodproduct_certificate ON certificates.id = foodproduct_certificate.certificate_id WHERE certificates.id = (SELECT foodproduct_certificate.certificate_id FROM foodproduct_certificate INNER JOIN foodproducts ON foodproducts.id = foodproduct_certificate.foodProduct_id WHERE foodproducts.id = '${foodproducts.id}')">
+                <field column="cCode" name="cert_code" />
+                <field column="cExpire" name="cert_ex" />
+                <field column="cStatus" name="cert_status" />
+                <field column="cOrganization" name="cert_org" />
+            </entity>
+            -->
+            <entity name="ingredients" query="SELECT DISTINCT i.iName FROM ingredients i JOIN foodproduct_ingredient fi ON i.id = fi.ingredient_id WHERE i.id IN (SELECT foodproduct_ingredient.ingredient_id FROM foodproduct_ingredient INNER JOIN foodproducts ON foodproducts.id = foodproduct_ingredient.foodProduct_id WHERE foodproducts.id = '${foodproducts.id}')">
+                <field column="iName" name="food_ing"/>
+            </entity>
+        </entity>
+        <!--
+            SELECT ingredients.id, ingredients.iName FROM ingredients INNER JOIN foodproduct_ingredient 
+            ON ingredients.id = foodproduct_ingredient.foodProduct_id 
+            WHERE ingredients.id = 
+            (SELECT foodproduct_ingredient.ingredient_id FROM foodproduct_ingredient INNER JOIN foodproducts 
+            ON foodproducts.id = foodproduct_ingredient.foodProduct_id 
+            WHERE foodproducts.id = foodproduct_ingredient.foodProduct_id)
+        -->
+    </document>
+</dataConfig>
