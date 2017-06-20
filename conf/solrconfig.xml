@@ -1740,10 +1740,10 @@
       <float name="food_ing">22.0</float>
     </lst>
     <lst name="fieldsB">
-      <float name="food_code">0.05</float>
-      <float name="food_name">0.35</float>
-      <float name="food_man">0.1</float>
-      <float name="food_ing">0.5</float>
+      <float name="food_code">0.06</float>
+      <float name="food_name">0.22</float>
+      <float name="food_man">0.23</float>
+      <float name="food_ing">0.48</float>
     </lst>
  </queryParser>
 
