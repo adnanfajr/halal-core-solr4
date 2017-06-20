@@ -18,13 +18,5 @@
                 <field column="iName" name="food_ing"/>
             </entity>
         </entity>
-        <!--
-            SELECT ingredients.id, ingredients.iName FROM ingredients INNER JOIN foodproduct_ingredient 
-            ON ingredients.id = foodproduct_ingredient.foodProduct_id 
-            WHERE ingredients.id = 
-            (SELECT foodproduct_ingredient.ingredient_id FROM foodproduct_ingredient INNER JOIN foodproducts 
-            ON foodproducts.id = foodproduct_ingredient.foodProduct_id 
-            WHERE foodproducts.id = foodproduct_ingredient.foodProduct_id)
-        -->
     </document>
 </dataConfig>

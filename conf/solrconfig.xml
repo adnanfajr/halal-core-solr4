@@ -1734,16 +1734,16 @@
     <str name="mainField">food_name</str>
     <float name="k1">10.0</float>
     <lst name="fieldsBoost">
-      <float name="food_code">5.0</float>
-      <float name="food_name">25.0</float>
-      <float name="food_man">15.0</float>
-      <float name="food_ing">15.0</float>
+      <float name="food_code">4.7</float>
+      <float name="food_name">63.5</float>
+      <float name="food_man">9.8</float>
+      <float name="food_ing">22.0</float>
     </lst>
     <lst name="fieldsB">
-      <float name="food_code">0.15</float>
+      <float name="food_code">0.05</float>
       <float name="food_name">0.35</float>
-      <float name="food_man">0.25</float>
-      <float name="food_ing">0.25</float>
+      <float name="food_man">0.1</float>
+      <float name="food_ing">0.5</float>
     </lst>
  </queryParser>
 
